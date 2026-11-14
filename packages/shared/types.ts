@@ -24,7 +24,7 @@ export const workflowEdge = z.object({
     source: z.string().min(1),
     sourceHandle: z.string().min(1),
     target: z.string().min(1),
-    tagetHandle: z.string().min(1),
+    targetHandle: z.string().min(1),
 });
 
 export const workflowDefinition = z.object({
