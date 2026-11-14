@@ -1,0 +1,19 @@
+{
+  "id": "wf_linear",
+  "version": 1,
+  "name": "Linear",
+  "state": {
+    "summary": { "type": "string", "reducer": "replace" }
+  },
+  "nodes": [
+    { "id": "n_1", "type": "trigger.manual", "position": { "x": 0, "y": 0 }, "config": {} },
+    { "id": "n_2", "type": "ai.llm", "position": { "x": 240, "y": 0 },
+      "config": { "model": "claude-sonnet-5-5", "prompt": "Summarise: {{state.input}}" },
+      "outputs": { "summary": "$.result.text" } },
+    { "id": "n_3", "type": "io.output", "position": { "x": 480, "y": 0 }, "config": { "value": "{{state.summary}}" } }
+  ],
+  "edges": [
+    { "id": "e_1", "source": "n_1", "sourceHandle": "out", "target": "n_2", "targetHandle": "in" },
+    { "id": "e_2", "source": "n_2", "sourceHandle": "out", "target": "n_3", "targetHandle": "in" }
+  ]
+}
