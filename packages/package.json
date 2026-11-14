@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "imports": {
+    "#examples/*": "./examples/*",
+    "#shared/*": "./shared/*"
+  },
   "scripts": {
     "test": "vitest"
   },
