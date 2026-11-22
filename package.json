@@ -1,4 +1,6 @@
 {
+  "name": "agentstudio",
+  "private": "true",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
