@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import 'dotenv/config';
 import cors from 'cors';
+import { runsRouter } from './routes/runs';
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use((err: unknown, _req: Request, res: Response, _next: express.NextFunction
   console.error(err);
   res.status(500).json({ error: 'Internal server error' });
 });
+
+app.use('/api/runs', runsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on localhost:${PORT}`);
