@@ -8,7 +8,7 @@ const items: { type: NodeType; label: string; color: string }[] = [
 ];
 
 function onDragStart(e: DragEvent, type: NodeType) {
-  e.dataTransfer?.setData('application/agentflow-node', type);
+  e.dataTransfer?.setData('application/agent-studio-node', type);
   if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
 }
 </script>
